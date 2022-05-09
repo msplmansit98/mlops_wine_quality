@@ -10,10 +10,8 @@ def save_to_raw(config_path):
 
     df = get_data(config_path)
 
-    column_names = [cols.replace(" ", "_") for cols in df.columns]
-    print(column_names)
-
-    df.to_csv(raw_data_path,header=column_names)
+    new_cols = [col.replace(" ", "_") for col in df.columns]
+    df.to_csv(raw_data_path, sep=",", index=False, header=new_cols)
 
     
 
