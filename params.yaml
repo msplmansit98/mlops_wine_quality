@@ -23,3 +23,10 @@ estimators:
       l1_ratio: 0.4
       
 model_dir: saved_models
+
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: ElasticNet regression
+  run_name: mlops
+  registered_model_name: ElasticNetWineModel
+  remote_server_uri: http://0.0.0.0:1234
