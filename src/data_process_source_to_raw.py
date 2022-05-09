@@ -1,7 +1,6 @@
 from get_data import get_data,read_params
 
 import argparse
-import pandas as pd
 
 def save_to_raw(config_path):
     config = read_params(config_path)
