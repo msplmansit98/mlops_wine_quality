@@ -21,6 +21,8 @@ estimators:
       l1_ratio: 0.89
       # alpha: 0.9
       # l1_ratio: 0.4
+      alpha: 0.5
+      l1_ratio: 0.8
       
 model_dir: saved_models
 
@@ -30,3 +32,5 @@ mlflow_config:
   run_name: mlops
   registered_model_name: ElasticNetWineModel
   remote_server_uri: http://127.0.0.1:5000
+
+webapp_model_dir: prediction_service/model/model.joblib
