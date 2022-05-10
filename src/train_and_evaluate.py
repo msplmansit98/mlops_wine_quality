@@ -48,21 +48,6 @@ def train_and_evaluate(config_path):
     train_x = train.drop(target, axis=1)
     test_x = test.drop(target, axis=1)
 
-    lr = ElasticNet(
-        alpha=alpha, 
-        l1_ratio=l1_ratio, 
-        random_state=random_state)
-    lr.fit(train_x, train_y)
-
-    predicted_qualities = lr.predict(test_x)
-    
-    (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
-
-    print("Elasticnet model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
-    print("  RMSE: %s" % rmse)
-    print("  MAE: %s" % mae)
-    print("  R2: %s" % r2)
-
     ################### MLFLOW ###############################
     mlflow_config = config["mlflow_config"]
     remote_server_uri = mlflow_config["remote_server_uri"]
@@ -81,6 +66,11 @@ def train_and_evaluate(config_path):
         predicted_qualities = lr.predict(test_x)
         
         (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
+
+        print("Elasticnet model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
+        print("  RMSE: %s" % rmse)
+        print("  MAE: %s" % mae)
+        print("  R2: %s" % r2)
 
         mlflow.log_param("alpha", alpha)
         mlflow.log_param("l1_ratio", l1_ratio)
