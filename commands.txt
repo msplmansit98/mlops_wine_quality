@@ -1,0 +1,7 @@
+##For DVC
+dvc init
+
+dvc add .\source_data\winequality.csv -> adds .gitignore and .dvc file
+if already tracked then
+git rm -r --cached 'source_data\winequality.csv'
+git commit -m "stop tracking source_data\winequality.csv"
