@@ -5,3 +5,13 @@ dvc add .\source_data\winequality.csv -> adds .gitignore and .dvc file
 if already tracked then
 git rm -r --cached 'source_data\winequality.csv'
 git commit -m "stop tracking source_data\winequality.csv"
+
+dvc remote add -d storage gdrive://<id>  -> for pushing your data to remote repository
+
+dvc push -> pushing the dataset to the remote
+dvc pull -> pulling the dataset from 
+
+
+##What to do when you clone the repo to other system
+then use dvc pull,
+first authenticate and then pull
