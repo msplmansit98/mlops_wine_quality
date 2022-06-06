@@ -10,4 +10,5 @@ Current problems
 ** Things to keep in mind
 - uncomment the mlflow code in train and evaluate file.
 - Always gitignore the files present in data folder
+- Train and evaluate stage is not added in dvc pipeline check the source repository
 - To see the data files run the dvc pipeline after you clone the repository

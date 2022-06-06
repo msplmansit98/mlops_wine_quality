@@ -34,3 +34,7 @@ mlflow_config:
   remote_server_uri: http://127.0.0.1:6000
 
 webapp_model_dir: prediction_service/model/model.joblib
+
+reports:
+  params: reports/params.json
+  scores: reports/scores.json
