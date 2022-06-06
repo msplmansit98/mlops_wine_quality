@@ -48,7 +48,7 @@ def train_and_evaluate(config_path):
     train_x = train.drop(target, axis=1)
     test_x = test.drop(target, axis=1)
 
-    ################### MLFLOW ###############################
+    # ################### MLFLOW ###############################
     mlflow_config = config["mlflow_config"]
     remote_server_uri = mlflow_config["remote_server_uri"]
 
@@ -90,10 +90,25 @@ def train_and_evaluate(config_path):
             mlflow.sklearn.load_model(lr, "model")
 
 
+    ############ WITHOUT MLFLOW, JUST STORING THE MODEL ##########
+    # lr = ElasticNet(
+    #     alpha=alpha, 
+    #     l1_ratio=l1_ratio, 
+    #     random_state=random_state)
+    # lr.fit(train_x, train_y)
+
+    # predicted_qualities = lr.predict(test_x)
+    
+    # (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
+
+    # print("Elastic net model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
+    # print("  RMSE: %s" % rmse)
+    # print("  MAE: %s" % mae)
+    # print("  R2: %s" % r2)
     # os.makedirs(model_dir, exist_ok=True)
     # model_path = os.path.join(model_dir, "model.joblib")
 
-    #joblib.dump(lr, model_path)
+    # joblib.dump(lr, model_path)
 
 
 
