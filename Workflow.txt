@@ -11,3 +11,6 @@
 -Packaged this particular project to a python project
 -Assigned limits to the value that can be entered while prediction
 -To check linting added flake8 - https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html
+-Added html, css scripts
+-Added flask and rendering the FE using flask
+-
