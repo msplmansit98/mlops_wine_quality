@@ -15,3 +15,13 @@ dvc pull -> pulling the dataset from
 ##What to do when you clone the repo to other system
 then use dvc pull,
 first authenticate and then pull
+
+
+##To run tox
+directly write - tox
+If you add new packages and want to run it again use> tox -r
+
+##To install the packages in local directory
+pip install -e .
+To create tar file for distribution this is the commands
+python setup.py sdist bdist_wheel

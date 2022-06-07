@@ -1,0 +1,11 @@
+-First created the folder structure
+-Created the processing files
+-DVC for versioning the source data
+-Automating the files run in a pipeline to create the mode
+-Saving the model once it is getting trained
+-Storing the scores and params in reports folder
+-*Using MLFlow tracking the model and then logging the best fit model based on the given condition
+-*Tracking the stored scores and params using dvc 
+-pytest added for testing
+-tox added for automation - it helps creating virtual environment and run commands using tox.ini file
+-Packaged this particular project to a python project
