@@ -1,4 +1,4 @@
--First created the folder structure
+-First created the folder structure using template.py file
 -Created the processing files
 -DVC for versioning the source data
 -Automating the files run in a pipeline to create the mode
@@ -10,3 +10,4 @@
 -tox added for automation - it helps creating virtual environment and run commands using tox.ini file
 -Packaged this particular project to a python project
 -Assigned limits to the value that can be entered while prediction
+-To check linting added flake8 - https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html

@@ -25,6 +25,7 @@ def eval_metrics(actual, pred):
     r2 = r2_score(actual, pred)
     return rmse, mae, r2
 
+
 def train_and_evaluate(config_path):
 
     config = read_params(config_path)
@@ -62,13 +63,13 @@ def train_and_evaluate(config_path):
 
     # with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlops_run:
     #     lr = ElasticNet(
-    #         alpha=alpha, 
-    #         l1_ratio=l1_ratio, 
+    #         alpha=alpha,
+    #         l1_ratio=l1_ratio,
     #         random_state=random_state)
     #     lr.fit(train_x, train_y)
 
     #     predicted_qualities = lr.predict(test_x)
-        
+
     #     (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
     #     print("Elasticnet model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
@@ -87,22 +88,18 @@ def train_and_evaluate(config_path):
 
     #     if tracking_url_type_store != "file":
     #         mlflow.sklearn.log_model(
-    #             lr, 
-    #             "model", 
+    #             lr,
+    #             "model",
     #             registered_model_name=mlflow_config["registered_model_name"])
     #     else:
     #         mlflow.sklearn.load_model(lr, "model")
 
-
     ############ WITHOUT MLFLOW, JUST STORING THE MODEL ##########
-    lr = ElasticNet(
-        alpha=alpha, 
-        l1_ratio=l1_ratio, 
-        random_state=random_state)
+    lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=random_state)
     lr.fit(train_x, train_y)
 
     predicted_qualities = lr.predict(test_x)
-    
+
     (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
     print("Elastic net model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
@@ -110,23 +107,14 @@ def train_and_evaluate(config_path):
     print("  MAE: %s" % mae)
     print("  R2: %s" % r2)
 
-    #logging the parameters in reports folder
-    with open(scores_file,"w") as f:
-        scores = {
-            "rmse": rmse,
-            "mae" : mae,
-            "r2" : r2
-        }
-        json.dump(scores, f, indent =4)
-    
-    with open(params_file,"w") as f:
-        params = {
-            "alpha": alpha,
-            "l1_ratio" : l1_ratio,
-            "time" : str(datetime.now())
-        }
-        json.dump(params, f, indent =4)
+    # logging the parameters in reports folder
+    with open(scores_file, "w") as f:
+        scores = {"rmse": rmse, "mae": mae, "r2": r2}
+        json.dump(scores, f, indent=4)
 
+    with open(params_file, "w") as f:
+        params = {"alpha": alpha, "l1_ratio": l1_ratio, "time": str(datetime.now())}
+        json.dump(params, f, indent=4)
 
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "model.joblib")
@@ -134,8 +122,7 @@ def train_and_evaluate(config_path):
     joblib.dump(lr, model_path)
 
 
-
-if __name__=="__main__":
+if __name__ == "__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", default="params.yaml")
     parsed_args = args.parse_args()

@@ -20,12 +20,8 @@ def train_test_split_func(config_path):
     random_state = config["base"]["random_state"]
 
     df = pd.read_csv(raw_data_path)
-    #print(df.head(5))
-    train, test = train_test_split(
-        df, 
-        test_size=test_size, 
-        random_state=random_state
-        )
+    # print(df.head(5))
+    train, test = train_test_split(df, test_size=test_size, random_state=random_state)
 
     train.to_csv(train_data_path, sep=",", index=False, encoding="utf-8")
     test.to_csv(test_data_path, sep=",", index=False, encoding="utf-8")

@@ -4,10 +4,10 @@ import os
 dirs = [
     "source_data",
     os.path.join("data", "raw"),
-    os.path.join("data","processed"),
+    os.path.join("data", "processed"),
     "notebooks",
     "saved_models",
-    "src"    
+    "src",
 ]
 
 for dir_ in dirs:
@@ -17,13 +17,12 @@ for dir_ in dirs:
 
 
 files = [
-    "dvc.yaml",         #For creating DVC pipelines
-    "params.yaml",      #For storing all parameters
+    "dvc.yaml",  # For creating DVC pipelines
+    "params.yaml",  # For storing all parameters
     ".gitignore",
-    os.path.join("src","__init__.py"),
+    os.path.join("src", "__init__.py"),
     "README.md",
-    "LICENSE"
-
+    "LICENSE",
 ]
 
 for file_ in files:
