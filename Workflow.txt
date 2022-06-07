@@ -13,4 +13,6 @@
 -To check linting added flake8 - https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html
 -Added html, css scripts using Jinja templating
 -Added flask and rendering the FE using flask
--
+-Created account in Heroku
+-Go the api token and app name and saved in github secrets
+-Create a proc file, which will be searched by Heroku for deployment
