@@ -11,6 +11,8 @@ dvc remote add -d storage gdrive://<id>  -> for pushing your data to remote repo
 dvc push -> pushing the dataset to the remote
 dvc pull -> pulling the dataset from 
 
+dvc repro ->> to run dvc pipelines
+
 
 ##What to do when you clone the repo to other system
 then use dvc pull,
@@ -22,6 +24,12 @@ directly write - tox
 If you add new packages and want to run it again use> tox -r
 
 ##To install the packages in local directory
-pip install -e .
+    pip install -e .
 To create tar file for distribution this is the commands
-python setup.py sdist bdist_wheel
+    python setup.py sdist bdist_wheel
+
+##To run pytest
+    pytest -v
+
+##To open jupyter notebook in notebooks folder
+    jupyter-lab notebooks/

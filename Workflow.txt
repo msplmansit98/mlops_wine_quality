@@ -9,3 +9,4 @@
 -pytest added for testing
 -tox added for automation - it helps creating virtual environment and run commands using tox.ini file
 -Packaged this particular project to a python project
+-Assigned limits to the value that can be entered while prediction
