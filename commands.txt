@@ -33,3 +33,8 @@ To create tar file for distribution this is the commands
 
 ##To open jupyter notebook in notebooks folder
     jupyter-lab notebooks/
+
+#For creating github workflows
+    >Create .github/workflows/ci-cd.yaml file
+    >get the ci-cd template from online
+    >edit it according to your use
